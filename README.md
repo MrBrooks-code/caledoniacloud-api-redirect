@@ -1,6 +1,6 @@
 # API Redirect Terraform Module
 
-A serverless API redirect service built with AWS Lambda and API Gateway that provides 301 redirects from one domain to another while preserving paths and query parameters.
+This was a fun little module to solve a problem that has repeatedly come up for me, cosmetic domains and cosmetic redirect with SSL integration. API_Redirect will create an API Gateway with Lambda python code housed in data.tf. Configure domain_name as the cosmetic domain, certificate_arn with cosmetic domain SAN, and target_domain to the complex URL redirect. Terraform will output the d-api redirect for Route 53. Process can be tested using the disable_execute_api_endpoint = false and test the API endpoint output.
 
 ## Features
 
@@ -205,7 +205,7 @@ terraform destroy
 
 **Note**: This will remove all created resources including Lambda function, API Gateway, and CloudWatch log groups.
 
-## TODO 
+## TO DO 
 - Move from certificate string to certificate resource with dynamic resource creation.
 - Create Route 53 records as part of stand-up.
 - Private API and Lambda versus Public API and Lambda
