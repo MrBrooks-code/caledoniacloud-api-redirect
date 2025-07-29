@@ -1,6 +1,8 @@
 # API Redirect Terraform Module
 
-This was a fun little module to solve a problem that has repeatedly come up for me, cosmetic domains and cosmetic redirect with SSL integration. API_Redirect will create an API Gateway with Lambda python code housed in data.tf. Configure domain_name as the cosmetic domain, certificate_arn with cosmetic domain SAN, and target_domain to the complex URL redirect. Terraform will output the d-api redirect for Route 53. Process can be tested using the disable_execute_api_endpoint = false and test the API endpoint output.
+This was a fun module created to solve a repeated problem for me, cosmetic domains and cosmetic redirect with SSL integration. This module will create an API Gateway with Lambda Python housed in data.tf. Configure variable domain_name as the cosmetic domain, certificate_arn with cosmetic public domain SAN, and target_domain to the complex URL you wish to redirect cosmetically. Terraform will output the d-api redirect for CNAME or Alias redirect. 
+
+Process can be tested using the disable_execute_api_endpoint = false and test the API endpoint output.
 
 ## Features
 
